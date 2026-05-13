@@ -1,6 +1,7 @@
 # https://wiki.archlinux.org/title/Bluetooth#Wake_from_suspend
-# in the future you can seach with console to find vendor and prod id
+# run "lsusb" in the console, output should look like "... 28de:1304 Valve Software Steam Controller"
 # create file in ../udev/rules.d/nameOfFile.rules
+# add the usb device with its vendor and prodcut id
 # run "sudo udevadm control --reload-rules && udevadm trigger" to restart and load rules
 
 # usb bluetooth dongle
