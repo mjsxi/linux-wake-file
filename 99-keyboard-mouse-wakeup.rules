@@ -1,0 +1,10 @@
+# https://wiki.archlinux.org/title/Bluetooth#Wake_from_suspend
+# in the future you can seach with console to find vendor and prod id
+# create file in ../udev/rules.d/nameOfFile.rules
+# run "sudo udevadm control --reload-rules && udevadm trigger" to restart and load rules
+
+# usb bluetooth dongle
+SUBSYSTEM=="usb", ATTRS{idVendor}=="7392", ATTRS{idProduct}=="c611" RUN+="/bin/sh -c 'echo enabled > /sys$env{DEVPATH}/../power/wakeup;'"
+
+# steam controller (2026) dongle
+SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", ATTRS{idProduct}=="1304" RUN+="/bin/sh -c 'echo enabled > /sys$env{DEVPATH}/../power/wakeup;'"
